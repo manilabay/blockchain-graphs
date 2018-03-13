@@ -1,0 +1,42 @@
+digraph G {
+
+    sender -> asset_A [color="green"];
+    sender -> asset_H;
+    sender -> asset_I;
+    sender -> asset_J;
+    sender -> connector_A [color="green"];
+    connector_A -> ledger_A [color="green"];
+    connector_B -> ledger_B [color="blue"];
+    connector_C -> ledger_C [color="blue"];
+    connector_A -> connector_B [color="blue"];
+    connector_B -> connector_C [color="blue"];
+    connector_C -> receiver [color="blue"];
+    connector_A -> receiver [color="green"];
+    receiver -> asset_C [color="blue"];
+    receiver -> asset_A [color="green"];
+    receiver -> asset_Y;
+    receiver -> asset_X;
+    receiver -> asset_Z;
+    asset_A -> ledger_A [color="green"];
+
+    connector_A -> quote [color="green"];
+    quote -> sender [color="green"];
+
+
+
+    sender_private_key -> sign_agreed_transaction;
+    receiver_private_key -> sign_agreed_transaction;
+
+    sign_agreed_transaction -> created_locked_public_box_with_both_public_keys_as_signers
+
+    created_locked_public_box_with_both_public_keys_as_signers -> sender_accept_and_open_box_with_private_key;
+    created_locked_public_box_with_both_public_keys_as_signers -> receiver_accept_and_open_box_with_private_key;
+
+    sender_accept_and_open_box_with_private_key -> ledger_X
+    receiver_accept_and_open_box_with_private_key -> ledger_X
+
+
+
+
+
+}
