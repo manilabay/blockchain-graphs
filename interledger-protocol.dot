@@ -1,42 +1,61 @@
 digraph G {
 
-    sender -> asset_A [color="green"];
+    # asset_A, asset_B, asset_C, asset_H, asset_I, asset_J, asset_X, asset_Y, asset_Z [shape=box];
+    ledger_A, ledger_B, ledger_C, ledger_D [shape=box];
+
+    sender -> asset_A [color="blue"];
+    sender -> asset_B [color="green"];
     sender -> asset_H;
     sender -> asset_I;
     sender -> asset_J;
-    sender -> connector_A [color="green"];
-    connector_A -> ledger_A [color="green"];
-    connector_B -> ledger_B [color="blue"];
-    connector_C -> ledger_C [color="blue"];
-    connector_A -> connector_B [color="blue"];
-    connector_B -> connector_C [color="blue"];
-    connector_C -> receiver [color="blue"];
-    connector_A -> receiver [color="green"];
-    receiver -> asset_C [color="blue"];
-    receiver -> asset_A [color="green"];
+    sender -> connector_A [headlabel="1", labelangle=60] [color="blue"];
+    sender -> connector_B [headlabel="4", labelangle=50] [color="green"];
+
+    connector_A -> ledger_A [color="blue"];
+    connector_B -> ledger_B [headlabel="8", labelangle=50] [color="green"];
+    connector_C -> ledger_C [headlabel="9", labelangle=50] [color="green"];
+    connector_A -> connector_B;
+    connector_B -> connector_C [headlabel="5", labelangle=50] [color="green"];
+    connector_C -> receiver [headlabel="10", labelangle=70] [color="green"];
+    connector_A -> receiver [color="blue"];
+
+    connector_C -> connector_D;
+    connector_D -> ledger_D;
+
+    receiver -> asset_C [headlabel="11", labelangle=50] [color="green"];
+    receiver -> asset_A [color="blue"];
     receiver -> asset_Y;
     receiver -> asset_X;
     receiver -> asset_Z;
-    asset_A -> ledger_A [color="green"];
+    asset_A -> ledger_A [color="blue"];
 
-    connector_A -> quote [color="green"];
-    quote -> sender [color="green"];
+    # Quoting
+    connector_A -> quote [headlabel="2", labelangle=50] [color="blue"];
+    quote -> sender [headlabel="3", labelangle=-50] [color="red"];
 
+    connector_C -> quote [headlabel="6", labelangle=-60] [color="green"];
+    quote -> sender [headlabel="7", labelangle=50] [color="green"];
 
+    # Receiver reject or havent the right private key
+    receiver -> connector_C [color="red"];
+    connector_C -> connector_B [color="red"];
+    ledger_B -> connector_B [color="red"];
+    connector_B -> sender [color="red"];
+    sender -> asset_B [color="red"];
 
-    sender_private_key -> sign_agreed_transaction;
-    receiver_private_key -> sign_agreed_transaction;
+    sender_private_key -> sign_agreed_transaction [color="green"];
+    receiver_private_key -> sign_agreed_transaction [color="green"];
 
-    sign_agreed_transaction -> created_locked_public_box_with_both_public_keys_as_signers
+    sign_agreed_transaction -> created_locked_public_box_with_both_public_keys_as_signers [color="green"];
 
-    created_locked_public_box_with_both_public_keys_as_signers -> sender_accept_and_open_box_with_private_key;
-    created_locked_public_box_with_both_public_keys_as_signers -> receiver_accept_and_open_box_with_private_key;
+    created_locked_public_box_with_both_public_keys_as_signers -> ledger_X [color="blue"];
 
-    sender_accept_and_open_box_with_private_key -> ledger_X
-    receiver_accept_and_open_box_with_private_key -> ledger_X
+    ledger_X -> sender_accept_and_open_box_with_private_key [color="green"];
 
+    sender_accept_and_open_box_with_private_key -> receiver_accept_and_open_box_with_private_key [color="green"];
 
+    receiver_accept_and_open_box_with_private_key -> receiver_get_payment [color="green"];
 
-
+    receiver_get_payment -> ledger_X [color="blue"];
 
 }
