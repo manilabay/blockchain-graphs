@@ -7,6 +7,8 @@ To create ELI5 graphs (Explain Like I'm Five) for different Blockchain and DLTs 
 
 # Interledger Protocol - ILP
 
+Status: WIP
+
 ![Interledger Protocol](interledger-protocol.png?raw=true "Interledger Protocol")
 
 ## Quick ELI5 explanation
@@ -42,7 +44,11 @@ Right graph: TODO
 
 * Could the receiver choose the asset to get the payment? I understood no, because if receiver could choose which asset to receive it could unfair due the fee is payed by the sender only.
 
-# IPFS
+# IPFS 
+
+Status: WIP
+
+![IPFS](ipfs.png?raw=true "IPFS")
 
 # Ethereum
 
