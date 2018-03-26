@@ -81,7 +81,7 @@ Basically:
 
 ## cpp-ethereum
 
-I will no draw again the cpp-ethereum architecture as it is already designed with graphviz also here:
+I wont't draw again the cpp-ethereum architecture as it is already designed with graphviz also here:
 
 [Ethereum Architecture](http://ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html)
 

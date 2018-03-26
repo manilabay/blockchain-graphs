@@ -57,6 +57,14 @@ digraph ethereum {
     External_Owned_Account -> eth_balance_EOA;
     External_Owned_Account -> node_E [label="eth transfer OR trigger contract code"];
 
+    #Abstract objects
+
+    developers -> DAO [label="build and deploy"];
+    DAO -> Dapp_1;
+    DAO -> Dapp_2 [label="has 1-n"];
+    Dapp_1 -> smart_contract_X;
+    Dapp_1 -> smart_contract_Y;
+    Dapp_2 -> smart_contract_Z [label="has 1-n"];
 
     private_keys -> External_Owned_Account;
 
