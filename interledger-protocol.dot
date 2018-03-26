@@ -40,6 +40,7 @@ digraph G {
     receiver -> connector_C [color="red"];
     connector_C -> connector_B [color="red"];
     ledger_B -> connector_B [color="red"];
+    ledger_C -> connector_C [color="red"];
     connector_B -> sender [color="red"];
     sender -> asset_B [color="red"];
 
@@ -49,13 +50,26 @@ digraph G {
     sign_agreed_transaction -> created_locked_public_box_with_both_public_keys_as_signers [color="green"];
 
     created_locked_public_box_with_both_public_keys_as_signers -> ledger_X [color="blue"];
+    created_locked_public_box_with_both_public_keys_as_signers -> ledger_Y [color="green"];
+    created_locked_public_box_with_both_public_keys_as_signers -> ledger_Z [color="green"];
 
-    ledger_X -> sender_accept_and_open_box_with_private_key [color="green"];
+    ledger_X -> sender_accept_and_open_box_with_private_key [color="blue"];
 
     sender_accept_and_open_box_with_private_key -> receiver_accept_and_open_box_with_private_key [color="green"];
 
     receiver_accept_and_open_box_with_private_key -> receiver_get_payment [color="green"];
 
+    ledger_X -> ledger_Y [color="green"];
+    ledger_Y -> sender_accept_and_open_box_with_private_key [color="green"];
+    ledger_Y -> sign_agreed_transaction [color="green"];
+
+    ledger_Y -> ledger_Z [color="green"];
+
+    ledger_Z -> sender_accept_and_open_box_with_private_key [color="green"];
+    ledger_Z -> sign_agreed_transaction [color="green"];
+
     receiver_get_payment -> ledger_X [color="blue"];
+
+
 
 }
