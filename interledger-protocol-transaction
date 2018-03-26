@@ -1,0 +1,37 @@
+digraph G {
+
+sender_private_key -> sign_agreed_transaction_one_by_ledger [color="green"];
+receiver_private_key -> sign_agreed_transaction_one_by_ledger [color="green"];
+
+sign_agreed_transaction_one_by_ledger -> created_locked_public_box_with_both_public_keys_as_signers [color="green"];
+
+
+created_locked_public_box_with_both_public_keys_as_signers -> ledger_X [color="blue"];
+
+created_locked_public_box_with_both_public_keys_as_signers -> set_timeout_by_ledger [color="green"];
+sender_accept_and_open_box_with_private_key -> receiver_accept_and_open_box_with_private_key [color="green"];
+
+set_timeout_by_ledger -> evaluate_timeout_by_ledger [label="check time" color="green"];
+
+evaluate_timeout_by_ledger -> sender_accept_and_open_box_with_private_key [color="green"];
+
+receiver_accept_and_open_box_with_private_key -> receiver_get_payment [color="green"];
+
+ledger_X -> ledger_Y [color="green"];
+ledger_Y -> sender_accept_and_open_box_with_private_key [color="green"];
+ledger_Y -> sign_agreed_transaction_one_by_ledger [color="green"];
+
+ledger_Y -> ledger_Z [color="green"];
+
+ledger_Z -> sender_accept_and_open_box_with_private_key [color="green"];
+ledger_Z -> sign_agreed_transaction_one_by_ledger [color="green"];
+
+receiver_get_payment -> ledger_X [color="blue"];
+receiver_get_payment -> ledger_Y [color="green"];
+receiver_get_payment -> ledger_Z [color="green"];
+
+evaluate_timeout_by_ledger -> sender [label="autorefund when timeout" color="red"]
+
+receiver_get_payment -> receiver [color="green"];
+
+}

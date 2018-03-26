@@ -8,6 +8,7 @@ digraph G {
     sender -> asset_H;
     sender -> asset_I;
     sender -> asset_J;
+    sender -> liability_R;
     sender -> connector_A [headlabel="1", labelangle=60] [color="blue"];
     sender -> connector_B [headlabel="4", labelangle=50] [color="green"];
 
@@ -27,6 +28,7 @@ digraph G {
     receiver -> asset_Y;
     receiver -> asset_X;
     receiver -> asset_Z;
+    receiver -> liability_U;
     asset_A -> ledger_A [color="blue"];
 
     # Quoting
@@ -49,13 +51,25 @@ digraph G {
 
     sign_agreed_transaction -> created_locked_public_box_with_both_public_keys_as_signers [color="green"];
 
+<<<<<<< HEAD
     created_locked_public_box_with_both_public_keys_as_signers -> ledger_X [color="blue"];
     created_locked_public_box_with_both_public_keys_as_signers -> ledger_Y [color="green"];
     created_locked_public_box_with_both_public_keys_as_signers -> ledger_Z [color="green"];
 
     ledger_X -> sender_accept_and_open_box_with_private_key [color="blue"];
+=======
+    receiver_accept_and_unlock_box_with_private_key -> created_locked_public_box_with_both_public_keys_as_signers [color="green"];
 
-    sender_accept_and_open_box_with_private_key -> receiver_accept_and_open_box_with_private_key [color="green"];
+    created_locked_public_box_with_both_public_keys_as_signers -> set_timeout [color="green"]
+>>>>>>> 371e5b12804fbe3b56360a90a5c354210630f019
+
+    set_timeout -> evaluate_timeout [color="green"]
+
+    evaluate_timeout -> sender [label="timeout reached" color="red"];
+
+    evaluate_timeout -> evaluate_timeout [label="check time" color="green"];
+
+    evaluate_timeout -> ledger_X [color="green"];
 
     receiver_accept_and_open_box_with_private_key -> receiver_get_payment [color="green"];
 

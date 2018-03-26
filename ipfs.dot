@@ -20,19 +20,16 @@ digraph ipfs {
   }
 
   subgraph exchange {
-      orders_ms -> {database} [color="red"];
 
 
   }
 
   subgraph routing {
-      orders_ms -> {database} [color="red"];
 
 
   }
 
   subgraph network {
-      orders_ms -> {database} [color="red"];
 
 
   }
