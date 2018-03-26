@@ -68,18 +68,22 @@ Status: WIP
 
 # Ethereum
 
+* Permissionless blockchain to access and operate in the network
+* PoW (Homestead version) with CPU and Memory (ASIC-proof) + PoS (Serenity version)
+* Private key to lock Addresses
+
 ![Ethereum Architecture](ethereum-architecture.png?raw=true "Ethereum")
-
-## cpp-ethereum
-
-I will no draw again the ethereum architecture as it is already designed with graphviz also here:
-
-[Ethereum Architecture](http://ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html)
 
 Basically:
 
-* Green arrows represent sync Workflow
-* Black arrows represent actions whichever node could run
+* Green arrows represent sync workflow for all the public ethereum network
+* Black arrows represent components whichever node has and actions could run
+
+## cpp-ethereum
+
+I will no draw again the cpp-ethereum architecture as it is already designed with graphviz also here:
+
+[Ethereum Architecture](http://ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html)
 
 # Stellar
 
