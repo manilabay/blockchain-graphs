@@ -2,8 +2,9 @@
 To create ELI5 graphs (Explain Like I'm Five) for different Blockchain and DLTs projects
 
 * [Interledger Protocol ILP](#interledger-protocol---ilp)
-* [Hyperledger](#Hyperledger)
-* [IPFS](#IPFS)
+* [Hyperledger](#hyperledger)
+* [Ethereum](#ethereum)
+* [IPFS](#ipfs)
 
 # Interledger Protocol - ILP
 
@@ -66,6 +67,14 @@ Status: WIP
 # Hyperledger
 
 # Ethereum
+
+![Ethereum Architecture](ethereum-architecture.png?raw=true "Ethereum")
+
+## cpp-ethereum
+
+I will no draw again the ethereum architecture as it is already designed with graphviz also here:
+
+[Ethereum Architecture](http://ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html)
 
 # Stellar
 

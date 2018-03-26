@@ -1,0 +1,42 @@
+digraph ethereum {
+
+  layout="circo";
+  node [shape = circle];
+
+  node_A -> node_B [color="blue"];
+  node_A -> node_C [color="blue"];
+  node_A -> node_D [color="blue"];
+  node_A -> node_E [color="blue"];
+  node_A -> node_F [color="blue"];
+
+  node_B -> node_A [color="blue"];
+  node_B -> node_C [color="blue"];
+  node_B -> node_D [color="blue"];
+  node_B -> node_E [color="blue"];
+  node_B -> node_F [color="blue"];
+
+  node_C -> node_A [color="blue"];
+  node_C -> node_B [color="blue"];
+  node_C -> node_D [color="blue"];
+  node_C -> node_E [color="blue"];
+  node_C -> node_F [color="blue"];
+
+  node_D -> node_A [color="blue"];
+  node_D -> node_B [color="blue"];
+  node_D -> node_C [color="blue"];
+  node_D -> node_E [color="blue"];
+  node_D -> node_F [color="blue"];
+
+  node_E -> node_A [color="blue"];
+  node_E -> node_B [color="blue"];
+  node_E -> node_C [color="blue"];
+  node_E -> node_D [color="blue"];
+  node_E -> node_F [color="blue"];
+
+  node_F -> node_A [color="blue"];
+  node_F -> node_B [color="blue"];
+  node_F -> node_C [color="blue"];
+  node_F -> node_D [color="blue"];
+  node_F -> node_E [color="blue"];
+
+}
