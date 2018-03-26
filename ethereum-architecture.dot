@@ -45,7 +45,7 @@ digraph ethereum {
   layout="dot";
   node [shape = box];
 
-    node_E -> EVM;
+    node_E -> EVM [label="has 1-1"];
     EVM -> smart_contract_X [label="execute"];
     EVM -> smart_contract_Y [label="execute"];
     node_A -> Contract_Account;
@@ -66,7 +66,8 @@ digraph ethereum {
     Dapp_1 -> smart_contract_Y;
     Dapp_2 -> smart_contract_Z [label="has 1-n"];
 
-    private_keys -> External_Owned_Account;
+    private_key_A -> External_Owned_Account [label="sign"];
+    private_key_n -> External_Owned_Account [label="multi-signature"];
 
 
   }

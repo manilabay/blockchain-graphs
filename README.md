@@ -70,7 +70,9 @@ Status: WIP
 
 * Permissionless blockchain to access and operate in the network
 * PoW (Homestead version) with CPU and Memory (ASIC-proof) + PoS (Serenity version)
-* Private key to lock Addresses
+* Private key to lock Addresses and Smart Contracts
+* Dapps development
+* Crypto-fuel (aka Gas) to use the blockchain to compute, transfer and storage.
 
 ![Ethereum Architecture](ethereum-architecture.png?raw=true "Ethereum")
 
