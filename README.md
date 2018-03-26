@@ -76,6 +76,11 @@ I will no draw again the ethereum architecture as it is already designed with gr
 
 [Ethereum Architecture](http://ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/architecture.html)
 
+Basically:
+
+* Green arrows represent sync Workflow
+* Black arrows represent actions whichever node could run
+
 # Stellar
 
 # Ripple
