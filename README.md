@@ -105,6 +105,8 @@ I wont't draw again the cpp-ethereum architecture as it is already designed with
 
 # R3 Corda
 
+Status: WIP
+
 * Permissioned blockchain to access and operate in the network, thats mean Private. You build the network between all the parties you want involve, nobody else.
 * With Infrastructure, you need build your node and maintain your infrastructure
 * Consensus: Multi Consensus algorithm: RAFT, BFT or whichever. You can have multiple notaries with different consensus algorithms.
