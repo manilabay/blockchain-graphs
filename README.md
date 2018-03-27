@@ -16,7 +16,13 @@ Status: WIP
 
 ## Quick ELI5 explanation
 
-Left graph show Interledger Protocol Architecture. There are 4 options path for a payment from Sender to Receiver:
+### Short description function
+ILP is an intermediary layer to interoperate between different Blockchain or DLTs. Interoperatibility
+
+### Long description function
+The purpose of the interledger protocol is to enable hosts to route payments through an interconnected set of ledgers. This is done by passing the payments from one interledger module to another until the destination is reached. The interledger modules reside in hosts and connectors in the interledger system. The payments are routed from one interledger module to another through individual ledgers based on the interpretation of an interledger address. Thus, a central component of the interledger protocol is the interledger address.
+
+Graph above show Interledger Protocol Architecture (ILP). There are 4 options path for a payment from Sender to Receiver:
 
 * a) Blue path: Using only 1 connector + 1 ledger (Apparently Cheaper). Blue path failed because Sender didn't accept the Quote in step 3.
 * b) Green path: Using more than a connector + ledger (Apparently Expensive)
@@ -68,11 +74,15 @@ Status: WIP
 
 # Ethereum
 
-* Permissionless blockchain to access and operate in the network
-* PoW (Homestead version) with CPU and Memory (ASIC-proof) + PoS (Serenity version)
+Status: WIP
+
+* Permissionless blockchain to access and operate in the network, thats mean Public, all is broadcast to all nodes.
+* Operation-less, you don't need build and maintain infrastructure
+* Consensus: PoW (Homestead version) with CPU and Memory (ASIC-proof) + PoS (Serenity version)
 * Private key to lock Addresses and Smart Contracts
-* Dapps development
-* Crypto-fuel (aka Gas) to use the blockchain to compute, transfer and storage.
+* Dapps development with smart contracts.
+* Crypto-fuel (aka Gas) to use the blockchain to compute, transfer and storage. You use cryptocurrency Ether(ETH) to pay for gas.
+* Miners are the validators
 
 ![Ethereum Architecture](ethereum-architecture.png?raw=true "Ethereum")
 
@@ -92,3 +102,10 @@ I wont't draw again the cpp-ethereum architecture as it is already designed with
 # Ripple
 
 # R3 Corda
+
+* Permissioned blockchain to access and operate in the network, thats mean Private. You build the network between all the parties you want involve, nobody else.
+* With Infrastructure, you need build your node and maintain your infrastructure
+* Private key to lock Addresses and Smart Contracts
+* CordaDapps development with smart contracts
+* Cryptocurrency is not required to use the network
+* There aren't miners
