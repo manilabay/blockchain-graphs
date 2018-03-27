@@ -82,7 +82,8 @@ Status: WIP
 * Private key to lock Addresses and Smart Contracts
 * Dapps development with smart contracts.
 * Crypto-fuel (aka Gas) to use the blockchain to compute, transfer and storage. You use cryptocurrency Ether(ETH) to pay for gas.
-* Miners are the validators
+* Miners are the validators, running on commodity hardware
+* Smart Contracts coded in Solidity
 
 ![Ethereum Architecture](ethereum-architecture.png?raw=true "Ethereum")
 
@@ -110,3 +111,4 @@ I wont't draw again the cpp-ethereum architecture as it is already designed with
 * CordaDapps development with smart contracts
 * Cryptocurrency is not required to use the network
 * There aren't miners, there are notaries
+* Contracts are written in Java or Kotlin and running in JVM
