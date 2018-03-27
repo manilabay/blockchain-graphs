@@ -113,3 +113,13 @@ I wont't draw again the cpp-ethereum architecture as it is already designed with
 * Cryptocurrency is not required to use the network
 * There aren't miners, there are notaries
 * Contracts are written in Java or Kotlin and running in JVM
+
+![Corda Architecture](corda-architecture.png?raw=true "R3 Corda")
+
+Basically:
+
+* Green arrows represent the PKI and Corda Doorman Admission Infrastructure
+* Blue arrows represent a permissioned private Corda network
+* Orange arrows represent another permissioned private Corda network
+* Brown arrows represent another permissioned private Corda network
+* rest of Workflow... TO-DO...
