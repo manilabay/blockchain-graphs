@@ -73,6 +73,30 @@ Status: WIP
 
 # Hyperledger
 
+Status: WIP
+
+Hyperledger is a strategy umbrella under the Linux Foundation which incubates and promotes a range of business blockchain technologies, framework, libraries, interfaces and applications.
+
+## Hyperledger Fabric
+
+* Permissioned blockchain: System level, User level, Contract level. Through certificates.
+* Pluggable consensus: Practical Byzantine Fault Tolerance (PBFT) Sieve.
+* Operations required
+* Dapps development with smart contracts. Dapps and Smart Contracts in Hyperledger Fabric is called Chaincodes.
+* Strong granular Permission system. First, There are channels to isolate and build sub-blockchains. Second, It is possible to deploy Chaincodes to the channels and add users to the channels. Third, you can restrict the input data to chaincode. Fourth, you can hash or encrypt the data before calling the chaincode. Fifth, you can restrict data access to certain roles in your organization, setting access control in the Chaincode level. And finally, you can encrypt ledger data via filesystem encryption in the Node, and data in-transit is encrypted via TLS.
+* Chaincode support Golang, but you could use any programming language supported by Hyperledger Fabric, there are another options to be fully supported as Java and Javascript. You can develop Chaincode applications with [Hyperledger Composer](https://hyperledger.github.io/composer/)
+* It hasn´t a native cryptocurrency, but you could develop your own digital asset through a Chaincode.
+
+
+
+
+## Hyperledger Sawtooth
+## Hyperledger Iroha
+## Hyperledger Burrow
+## Hyperledger Composer
+
+
+
 # Ethereum
 
 Status: WIP
