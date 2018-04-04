@@ -45,11 +45,11 @@ digraph hyperledger_fabric_2 {
     Orderers_Pool -> Orderer_2;
 
     #Architecture by components
-    CA--New_Peer [label="auth" color="green"];
-    Organization--CA [label="has" arrowhead="none"];
-    Organization--Peers [label="has" arrowhead="crow"];
-    peer_A--couchdb [label="every peer has" arrowhead="none"];
-    Orderers--Organization [arrowtail="crow" arrowhead="crow"];
+    CA -> New_Peer [label="auth" color="green"];
+    Organization -> CA [label="has" arrowhead="none"];
+    Organization -> Peers [label="has" arrowhead="crow"];
+    peer_A -> couchdb [label="every peer has" arrowhead="none"];
+    Orderers -> Organization [arrowtail="crow" arrowhead="crow"];
 
   }
 
@@ -58,17 +58,17 @@ digraph hyperledger_fabric_2 {
     node [shape = box];
 
     #SDLC workflow
-    developers--Chaincodes [label="build and deploy" arrowhead="crow"];
-    Chaincodes--smart_contracts [arrowhead="crow"];
-    smart_contracts--States [arrowhead="crow"];
-    States--Transaction;
-    Transaction--New_States;
+    developers -> Chaincodes [label="build and deploy" arrowhead="crow"];
+    Chaincodes -> smart_contracts [arrowhead="crow"];
+    smart_contracts -> States [arrowhead="crow"];
+    States -> Transaction;
+    Transaction -> New_States;
 
     #Transaction Workflow
-    FrontEnd_Client_App--peer_A [label="submit proposal" color="green"];
-    peer_A--FrontEnd_Client_App [label="proposal response + RWSet" color="green"];
-    FrontEnd_Client_App--Orderer_1 [label="new tx * RWSet"];
-    all_peers_in_an_org--couchdb [label="validate tx and commit block" color="green"];
+    FrontEnd_Client_App -> peer_A [label="submit proposal" color="green"];
+    peer_A -> FrontEnd_Client_App [label="proposal response + RWSet" color="green"];
+    FrontEnd_Client_App -> Orderer_1 [label="new tx * RWSet"];
+    all_peers_in_an_org -> couchdb [label="validate tx and commit block" color="green"];
 
   }
 
