@@ -75,27 +75,24 @@ Status: WIP
 
 Status: WIP
 
-Hyperledger is a strategy umbrella under the Linux Foundation which incubates and promotes a range of business blockchain technologies, framework, libraries, interfaces and applications.
+Hyperledger is a strategic umbrella under the Linux Foundation which incubates and promotes a range of business blockchain technologies, framework, libraries, interfaces and applications.
 
 ## Hyperledger Fabric
 
-* Permissioned blockchain: System level, User level, Contract level. Through certificates.
+* Permissioned blockchain: Permissions setup in System level, User level, Contract level. Through certificates.
 * Pluggable consensus: Practical Byzantine Fault Tolerance (PBFT) Sieve.
-* Operations required
-* Dapps development with smart contracts. Dapps and Smart Contracts in Hyperledger Fabric is called Chaincodes.
+* Operations required, you must build and maintain your own Blockchain Infrastructure and integrate with your Architecture base.
+* DApps development with smart contracts. DApps and Smart Contracts in Hyperledger Fabric is called Chaincodes.
 * Strong granular Permission system. First, There are channels to isolate and build sub-blockchains. Second, It is possible to deploy Chaincodes to the channels and add users to the channels. Third, you can restrict the input data to chaincode. Fourth, you can hash or encrypt the data before calling the chaincode. Fifth, you can restrict data access to certain roles in your organization, setting access control in the Chaincode level. And finally, you can encrypt ledger data via filesystem encryption in the Node, and data in-transit is encrypted via TLS.
-* Chaincode support Golang, but you could use any programming language supported by Hyperledger Fabric, there are another options to be fully supported as Java and Javascript. You can develop Chaincode applications with [Hyperledger Composer](https://hyperledger.github.io/composer/)
-* It hasn´t a native cryptocurrency, but you could develop your own digital asset through a Chaincode.
+* Chaincode support Golang, but you could use any programming language supported by Hyperledger Fabric, there are another language options to be fully supported Javascript. You can develop Chaincode applications with [Hyperledger Composer](https://hyperledger.github.io/composer/)
+* It hasn´t a native cryptocurrency due it is a private blockchain and consensus mechanism is via a sub-set peer nodes. But you could develop your own digital asset(aka token or crypto) through a Chaincode itself if it is required in your Use Case or integrate with some public blockchain with a cryptocurrency.
 
-
-
+![Hyperledger Fabric](hyperledger-fabric.png?raw=true "Hyperledger Fabric")
 
 ## Hyperledger Sawtooth
 ## Hyperledger Iroha
 ## Hyperledger Burrow
 ## Hyperledger Composer
-
-
 
 # Ethereum
 
@@ -108,7 +105,7 @@ Status: WIP
 * Dapps development with smart contracts.
 * Crypto-fuel (aka Gas) to use the blockchain to compute, transfer and storage. You use cryptocurrency Ether(ETH) to pay for gas.
 * Miners are the validators, running on commodity hardware
-* Smart Contracts coded in Solidity
+* Smart Contracts coded with Solidity
 
 ![Ethereum Architecture](ethereum-architecture.png?raw=true "Ethereum")
 
@@ -136,7 +133,7 @@ Status: WIP
 * Consensus: Multi Consensus algorithm: RAFT, BFT or whichever. You can have multiple notaries with different consensus algorithms.
 * Private key to lock Addresses and Smart Contracts
 * CordaDapps development with smart contracts
-* Cryptocurrency is not required to use the network
+* Cryptocurrency is not required to use the network, so nobody pays for any transaction.
 * There aren't miners, there are notaries
 * Contracts are written in Java or Kotlin and running in JVM
 
@@ -145,7 +142,7 @@ Status: WIP
 Basically:
 
 * Green arrows represent the PKI and Corda Doorman Admission Infrastructure
-* Blue arrows represent a permissioned private Corda network
-* Orange arrows represent another permissioned private Corda network
-* Brown arrows represent another permissioned private Corda network
+* Blue arrows represent a permissioned private Corda network with their isolated Facts subset
+* Orange arrows represent another permissioned private Corda and facts subset
+* Brown arrows represent another permissioned private Corda and facts subset
 * rest of Workflow... TO-DO...

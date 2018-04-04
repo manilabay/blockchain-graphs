@@ -45,34 +45,30 @@ digraph corda {
   subgraph components_by_node {
     node [shape = box];
 
-    node_E -> JVM [label="has 1-1"];
-    node_E_owner -> CorDapp_1 [label="RPC calls"];
-    JVM -> smart_contract_X [label="execute"];
-    JVM -> smart_contract_Y [label="execute"];
-    node_A -> Notary_Service_1;
-    node_A -> Notary_Service_n;
+    node_E -> JVM [label="has" arrowhead="none"];
+    node_E_owner -> CorDapps [label="RPC calls"];
+    JVM -> smart_contracts [arrowhead="crow" label="execute"];
+    node_A -> Notary_Services [arrowhead="crow"];
+
     node_A -> Oracle_Service;
-    node_A -> Vault;
+    node_A -> Vault [arrowhead="none"];
     Vault -> Consumed_Historical_States;
     Vault -> Uncosumed_States;
 
 
-    Notary_Service_1 -> Consensus_Algorithm_1;
-    Notary_Service_n -> Consensus_Algorithm_n;
+    Notary_Services -> Consensus_Algorithms [arrowhead="crow"];
     Oracle_Service -> Transaction [label="Sign"];
 
     #Abstract objects
 
-    developers -> DAO [label="build and deploy"];
-    DAO -> CorDapp_1;
-    DAO -> CorDapp_2 [label="has 1-n"];
-    CorDapp_1 -> smart_contract_X;
-    CorDapp_1 -> smart_contract_Y;
-    CorDapp_2 -> smart_contract_Z [label="has 1-n"];
+    developers -> DAO [label="build and deploy" arrowhead="crow"];
+    DAO -> CorDapps [arrowhead="crow"];
 
-    smart_contract_X -> State_1;
-    State_1 -> Transaction;
-    Transaction -> State_2;
+    CorDapps -> smart_contracts [arrowhead="crow"];
+
+    smart_contracts -> States [arrowhead="crow"];
+    States -> Transaction;
+    Transaction -> New_States;
 
     New_Node -> Doorman [label="Know-Your-Customer rules" color="green"];
     Doorman -> Permissioning_Service_PKI [label="If KYC ok Sign certificates" color="green"];

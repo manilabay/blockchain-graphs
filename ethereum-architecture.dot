@@ -6,6 +6,7 @@ digraph ethereum {
   node_A -> node_B [color="green"];
   node_A -> node_C [color="green"];
   node_A -> node_D [color="green"];
+  node_A -> node_D [color="green"];
   node_A -> node_E [color="green"];
   node_A -> node_F [color="green"];
 
@@ -45,28 +46,23 @@ digraph ethereum {
   layout="dot";
   node [shape = box];
 
-    node_E -> EVM [label="has 1-1"];
-    EVM -> smart_contract_X [label="execute"];
-    EVM -> smart_contract_Y [label="execute"];
+    node_E -> EVM [label="has" arrowhead="none"];
+    EVM -> smart_contracts [label="execute" arrowhead="crow"];
+
     node_A -> Contract_Account;
     #node_E -> External_Owned_Account;
     Contract_Account -> eth_balance_CA;
-    Contract_Account -> smart_contract_X;
-    Contract_Account -> smart_contract_Y;
-    Contract_Account -> smart_contract_Z;
+    Contract_Account -> smart_contracts [arrowhead="crow"];
     External_Owned_Account -> eth_balance_EOA;
     External_Owned_Account -> node_E [label="eth transfer OR trigger contract code"];
 
     #Abstract objects
 
     developers -> DAO [label="build and deploy"];
-    DAO -> Dapp_1;
-    DAO -> Dapp_2 [label="has 1-n"];
-    Dapp_1 -> smart_contract_X;
-    Dapp_1 -> smart_contract_Y;
-    Dapp_2 -> smart_contract_Z [label="has 1-n"];
+    DAO -> Dapps [arrowhead="crow" label="has"];
+    Dapps -> smart_contracts [arrowhead="crow" label="has"];
 
-    private_key_A -> External_Owned_Account [label="sign"];
+    private_key_1 -> External_Owned_Account [label="sign"];
     private_key_n -> External_Owned_Account [label="multi-signature"];
 
 
