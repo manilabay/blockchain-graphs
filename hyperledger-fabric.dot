@@ -30,6 +30,13 @@ graph hyperledger_fabric_1 {
 
   }
 
+  clusterA -- CA_A [label="has" arrowhead="none"];
+  clusterZ -- CA_Z [label="has" arrowhead="none"];
+
+  clusterA -- Orderers_Pool [arrowhead="none"];
+  clusterZ -- Orderers_Pool [arrowhead="none"];
+
+
 }
 
 digraph hyperledger_fabric_2 {
@@ -46,7 +53,7 @@ digraph hyperledger_fabric_2 {
 
     #Architecture by components
     CA -> New_Peer [label="auth" color="green"];
-    Organization -> CA [label="has" arrowhead="none"];
+
     Organization -> Peers [label="has" arrowhead="crow"];
     peer_A -> couchdb [label="every peer has" arrowhead="none"];
     Orderers -> Organization [arrowtail="crow" arrowhead="crow"];
