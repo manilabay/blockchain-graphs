@@ -1,5 +1,5 @@
 # blockchain-graphs
-To create ELI5 graphs (Explain Like I'm Five) for different Blockchain and DLTs projects
+To create ELI5 graphs (Explain Like I'm Five) for different Blockchain and DLTs projects. I designed all the graphs using [agile-architecture  own project](https://github.com/manilabay/agile-architecture) and approach using graphviz and dot language.
 
 * [Interledger Protocol ILP](#interledger-protocol---ilp)
 * [Hyperledger](#hyperledger)
@@ -79,6 +79,8 @@ Hyperledger is a strategic umbrella under the Linux Foundation which incubates a
 
 ## Hyperledger Fabric
 
+* Multi-purpose blockchain
+* IBM flavour
 * Permissioned blockchain: Permissions setup in System level, User level, Contract level. Through certificates.
 * Pluggable consensus: Practical Byzantine Fault Tolerance (PBFT) Sieve.
 * Operations required, you must build and maintain your own Blockchain Infrastructure and integrate with your Architecture base.
@@ -89,10 +91,32 @@ Hyperledger is a strategic umbrella under the Linux Foundation which incubates a
 
 ![Hyperledger Fabric](hyperledger-fabric.png?raw=true "Hyperledger Fabric")
 
-## Hyperledger Sawtooth
-## Hyperledger Iroha
+## Hyperledger Sawtooth - WIP
+* IoT blockchain purpose
+* Intel flavour
+
+## Hyperledger Iroha - WIP
+* Mobile blockchain
+* Soramitsu Flavour
+
 ## Hyperledger Burrow
-## Hyperledger Composer
+
+## Hyperledger Tooling (at a high level - WIP)
+
+### Hyperledger Composer
+Hyperledger Fabric Framework and Package managment
+
+### Hyperledger Caliper
+Blockchain benchamark tool
+
+###Hyperledger Cello
+Deployment tooling
+
+###Hyperledger Explorer
+Analytics tooling
+
+###Hyperledger Indy
+Supporting independent identity
 
 # Ethereum
 
