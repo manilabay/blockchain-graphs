@@ -12,7 +12,7 @@ graph hyperledger_fabric_1 {
   subgraph clusterA {
     node [shape = circle];
 
-    label="Organization A - Channel";
+    label="Organization A - Private Channel";
     peer_A--peer_B;
     peer_A--peer_C;
     peer_B--peer_C;
@@ -31,7 +31,7 @@ graph hyperledger_fabric_1 {
     Chaincode [shape = doublecircle];
 
 
-    label="Organization Z - Channel";
+    label="Organization Z - Private Channel";
     peer_D--peer_E;
     peer_D--peer_F;
     peer_E--peer_F;
@@ -47,12 +47,13 @@ graph hyperledger_fabric_1 {
   clusterA -- CA_A [label="has" arrowhead="none"];
   clusterZ -- CA_Z [label="has" arrowhead="none"];
 
-  clusterA -- Orderers_Pool [label="relay" arrowhead="none"];
-  clusterZ -- Orderers_Pool [label="batch" arrowhead="none"];
+  clusterA -- Orderers_Pool [label="3 relay" arrowhead="none"];
+  clusterA -- Orderers_Pool [label="4 batch" arrowhead="none"];
+  clusterZ-- Orderers_Pool [arrowhead="none"];
 
   application -- keys;
-  application -- clusterA [label="proposal and submit tx"]
-  participant -- application [label="enroll"];
+  application -- clusterA [label="1 proposal and 2 submit tx"]
+  participant -- application [label="0 enroll"];
 
 }
 
