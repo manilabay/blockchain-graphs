@@ -12,7 +12,7 @@ graph hyperledger_fabric_1 {
   subgraph clusterA {
     node [shape = circle];
 
-    label="Organization A";
+    label="Organization A - Channel";
     peer_A--peer_B;
     peer_A--peer_C;
     peer_B--peer_C;
@@ -23,19 +23,36 @@ graph hyperledger_fabric_1 {
 
     node [shape = circle];
 
-    label="Organization Z";
+    State [shape = doublecircle];
+    Events [shape = doublecircle];
+    Committer [shape = doublecircle];
+    Endorser [shape = doublecircle];
+    Ledger [shape = doublecircle];
+    Chaincode [shape = doublecircle];
+
+
+    label="Organization Z - Channel";
     peer_D--peer_E;
     peer_D--peer_F;
     peer_E--peer_F;
+    peer_E--State;
+    peer_E--Endorser;
+    peer_E--Committer;
+    peer_E--Ledger;
+    peer_E--Events;
+    peer_E--Chaincode;
 
   }
 
   clusterA -- CA_A [label="has" arrowhead="none"];
   clusterZ -- CA_Z [label="has" arrowhead="none"];
 
-  clusterA -- Orderers_Pool [arrowhead="none"];
-  clusterZ -- Orderers_Pool [arrowhead="none"];
+  clusterA -- Orderers_Pool [label="relay" arrowhead="none"];
+  clusterZ -- Orderers_Pool [label="batch" arrowhead="none"];
 
+  application -- keys;
+  application -- clusterA [label="proposal and submit tx"]
+  participant -- application [label="enroll"];
 
 }
 
