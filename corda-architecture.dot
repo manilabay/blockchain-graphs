@@ -61,8 +61,7 @@ digraph corda {
 
     #Abstract objects
 
-    developers -> DAO [label="build and deploy" arrowhead="crow"];
-    DAO -> CorDapps [arrowhead="crow"];
+    developers -> CorDapps [label="build and deploy" arrowhead="crow"];
 
     CorDapps -> smart_contracts [arrowhead="crow"];
 

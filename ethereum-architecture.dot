@@ -58,9 +58,8 @@ digraph ethereum {
 
     #Abstract objects
 
-    developers -> DAO [label="build and deploy"];
-    DAO -> Dapps [arrowhead="crow" label="has"];
-    Dapps -> smart_contracts [arrowhead="crow" label="has"];
+    developers -> DApps [label="build and deploy" arrowhead="crow"];
+    DApps -> smart_contracts [arrowhead="crow" label="has"];
 
     private_key_1 -> External_Owned_Account [label="sign"];
     private_key_n -> External_Owned_Account [label="multi-signature"];
