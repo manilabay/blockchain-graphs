@@ -32,7 +32,7 @@ digraph ethereum {
   node_E -> node_B [color="green"];
   node_E -> node_C [color="green"];
   node_E -> node_D [color="green"];
-  node_E -> node_F [color="green"];
+  node_E -> node_F [color="green" label="progagate / broadcast"];
 
   node_F -> node_A [color="green"];
   node_F -> node_B [color="green"];
